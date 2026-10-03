@@ -1,0 +1,84 @@
+name: Reporte de error
+description: Algo no funciona, o el comportamiento no coincide con lo documentado
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por reportarlo. Este repositorio contiene trabajos de coursework,
+        así que hay errores conocidos ya registrados: revisa la sección
+        **"Estado del repositorio"** del README del proyecto para no duplicar
+        uno ya conocido.
+
+  - type: input
+    id: proyecto
+    attributes:
+      label: Proyecto
+      description: La carpeta del proyecto donde ocurre el problema.
+      placeholder: Practica6Cripto
+    validations:
+      required: true
+
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: ¿Qué ocurre?
+      description: Qué esperabas y qué pasó, en tus palabras.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduccion
+    attributes:
+      label: Pasos para reproducir
+      description: Pasos numerados, empezando por cómo se lanza el programa.
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: salida
+    attributes:
+      label: Salida de consola
+      description: Pega aquí lo que imprime el programa, incluidos los errores.
+      render: shell
+    validations:
+      required: true
+
+  - type: input
+    id: clase
+    attributes:
+      label: Clase afectada
+      description: Si aplica, la clase Java donde está el problema.
+      placeholder: practica6cripto.ECDSAPractica
+
+  - type: input
+    id: java
+    attributes:
+      label: Versión de Java
+      description: Salida de `java -version`.
+      placeholder: openjdk version "19.0.2"
+
+  - type: input
+    id: sistema
+    attributes:
+      label: Sistema operativo
+      placeholder: Windows 11 / Ubuntu 22.04 / macOS 14
+
+  - type: textarea
+    id: params
+    attributes:
+      label: Parámetros criptográficos
+      description: >
+        Si el problema es de curvas elípticas, indica los valores que usaste
+        (curva, a, b, p y las claves privadas). Sin esto no se puede reproducir.
+      render: text
+
+  - type: checkboxes
+    id: verificado
+    attributes:
+      label: Antes de enviar
+      options:
+        - label: Revisé el README del proyecto y el problema no aparece ya listado.
+        - label: Busqué issues abiertos por si el problema está reportado.
+        - label: Eliminé `build/`, `out/` y `target/` por si son clases viejas.

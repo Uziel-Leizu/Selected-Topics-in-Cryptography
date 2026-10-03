@@ -1,0 +1,79 @@
+name: Propuesta de mejora
+description: Sugerencia de documentación, claridad o corrección menor
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Bienvenido. Antes de proponer un cambio, ten en cuenta que este
+        repositorio documenta trabajos de coursework **tal como fueron
+        entregados**. El objetivo es que se entienda mejor el código, no
+        reescribirlo.
+
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo de mejora
+      multiple: false
+      options:
+        - Documentación de un README
+        - Corrección de contenido
+        - Diagrama o explicación técnica
+        - Prueba unitaria
+        - Facilidad de ejecución (build, classpath, scripts)
+        - Otro
+    validations:
+      required: true
+
+  - type: input
+    id: proyecto
+    attributes:
+      label: Proyecto afectado
+      description: Deja "raíz" si el cambio es para todo el repositorio.
+      placeholder: Diffie-Hellman
+    validations:
+      required: true
+
+  - type: textarea
+    id: problema
+    attributes:
+      label: ¿Qué problema resuelve?
+      description: Qué le cuesta hoy a alguien que lea el repositorio, y qué pasaría tras el cambio.
+    validations:
+      required: true
+
+  - type: textarea
+    id: propuesta
+    attributes:
+      label: Propuesta concreta
+      description: Qué habría que cambiar, en concreto.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: alcance
+    attributes:
+      label: ¿Toca el código entregado?
+      description: Si es "no", es un cambio de documentación y se puede revisar rápido.
+      multiple: false
+      options:
+        - "No: solo documentación"
+        - "Sí: requiere modificar el código"
+        - "No estoy seguro"
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternativas
+    attributes:
+      label: Alternativas consideradas
+      description: Opcional. Qué otra solución se te ocurrió y por qué la descartaste.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Declaraciones
+      options:
+        - label: >
+            Entiendo que este repositorio documenta trabajos ya entregados y que
+            los problemas de código existentes están registrados a propósito.

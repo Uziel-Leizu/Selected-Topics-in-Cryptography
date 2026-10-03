@@ -1,0 +1,28 @@
+# Salida de compilacion
+build/
+dist/
+out/
+target/
+bin/
+
+# Clases compiladas
+*.class
+*.jar
+*.war
+*.ear
+
+# Metadatos locales de NetBeans / Maven / Ant
+nbproject/private/
+nbproject/genfiles.properties
+.vscode/
+.idea/
+.settings/
+.classpath
+.project
+nb-configuration.xml
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+*~
+*.swp
